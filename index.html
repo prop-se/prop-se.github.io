@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Soft Proprioceptive Module">
+  <meta name="keywords" content="SPM, MVAE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soft Proprioceptive Module</title>
+
+  <!-- Google Tag Manager -->
+  <script>(
+    function(w, d, s, l, i){
+      w[l] = w[l]||[];
+      w[l].push(
+        {
+          'gtm.start': new Date().getTime(),
+          event:'gtm.js'
+        }
+      );
+      var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l:'';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    }
+    )(window, document, 'script', 'dataLayer', 'GTM-PKJWGKV4');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="css/bulma-slider.min.css">
+  <link rel="stylesheet" href="css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="images/icon.jpg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="js/fontawesome.all.min.js"></script>
+  <script src="js/bulma-carousel.min.js"></script>
+  <script src="js/bulma-slider.min.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKJWGKV4"
+    height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Soft Proprioceptive Module</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://hanxudong.cc">Xudong Han</a><sup>1,#</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://gabriel-ning.github.io">Ning Guo</a><sup>1,#</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://makerworld.com/zh/@InvictusRhXU">Ronghan Xu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=EBG1Tj4AAAAJ">Xiaobo Liu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://faculty.sustech.edu.cn/?tagid=daijs&lang=en">Jian S. Dai</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://faculty.sustech.edu.cn/?tagid=hongw&lang=en">Wei Hong</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://maindl.ancorasir.com">Fang Wan</a><sup>3,</sup>*,
+              </span>
+              <span class="author-block">
+                <a href="https://bionicdl.ancorasir.com">Chaoyang Song</a><sup>1,</sup>*
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>Department of Mechanical and Energy Engineering,
+              </span><br />
+              <span class="author-block">
+                <sup>2</sup>Department of Mehcanics and Aerospace Engineering,
+              </span><br />
+              <span class="author-block">
+                <sup>3</sup>School of Design, Southern University of Science and Technology
+              </span><br />
+              <span class="author-block">
+                <sup>#</sup>Equal Contribution,
+              </span>
+              <span class="author-block">
+                *Corresponding authors
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2011.12948"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/han-xudong/soft_proprioceptive_module"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://sites.google.com/view/spm-hardware-guide"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-book"></i>
+                    </span>
+                    <span>Hardware</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <video id="teaser" autoplay muted loop playsinline width="80%">
+              <source src="videos/teaser.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>Soft Proprioceptive Module (SPM)</b> is a class of soft modules 
+              with proprioception capabilities.
+              SPMs are designed with a vision-based proprioception method, which
+              can allow users to perceive multi-modal information of the
+              metastructure, such as pose, force, and shape, only through a
+              monocular camera in real-time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">SPM Design</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>Soft Proprioceptive Module (SPM)</b> hardware consists of a
+              metastructure, a camera, LED lights and several 3D-printed parts.
+              There are six types of SPMs, including cylinder, octagonal prism,
+              quadrangular prism, origami, omni-neck, and dome.
+              All SPMs are with similar structure and based on the same vision-based
+              proprioception method. More building details can be found in
+              <a href="https://sites.google.com/view/spm-hardware-guide/spm-hardware-guide">
+              hardware guide</a>.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/spm_hardware.jpg" width="90%" alt="spm hardware"></img>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              The pose information of the marker captured by the camera can be
+              transformed into a geometric state of a set of boundaries of the
+              metastructure corresponding to the marker, which can be regarded as one
+              kind of local representation of the proprio-state of the metastructure.
+              This modal information, namely the pose of the top surface, is 
+              correlated with other modal information, such as deformation fields,
+              stress fields, concentrated force, etc. 
+              Therefore, based on the marker pose information, it is feasible to
+              estimate the various modal states of the metastructure, thereby 
+              endowing it with the ability of proprioception.
+            </p>
+          </div>
+          <video id="teaser" autoplay muted loop playsinline controls width="90%">
+            <source src="videos/spm.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Mechanical Properties Identification</h2>
+          <div class="content has-text-justified">
+            <p>
+              Finite element analysis (FEA) is a highly effective numerical method
+              for obtaining those mechanical data.
+              But due to the non-linear material characteristics and complex 
+              geometries of the meastructures, it is necessary to identify the
+              mechanical properties before FEA to minimize the discrepancy between
+              the simulation and the real-world. 
+              Therefore, we developed <b>Evolutionary Optimization for Material 
+              Identification with Abaqus (EVOMIA)</b>, which is a framework for
+              material parameter identification based on experimental data.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/evomia.png" width="70%" alt="evomia"></img>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Taken omni-neck as an example, we identified the parameters of the 
+              Ogden (n=3) model, which is the most fitted from the uniaxial tesion
+              test.
+              The normalized error decreased rapidly and converged to the minimum 
+              value of 8.863 after 482 trials. 
+              Further, we calculated the error of the simulation results using the
+              identified parameters, and compared it with those using the parameters
+              from the uniaxial tension test.
+              The result shows that EVOMIA can effectively reduce the error by more
+              than 10 times, which indicates that it is available to align the
+              mechanical properties between the physical entities and the simulation
+              models.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/evomia_res.png" width="90%" alt="evomia results"></img>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Multi-modal Generative Network</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>Multi-modal Variational Autoencoder (MVAE)</b>
+              is developed to learn the morphing primitives of SPMs, which include
+              the multi-modal information representing SPMs' behaviours.
+              The architecture of MVAE is shown below:
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/mvae.jpg" width="90%" alt="mvae"></img>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              To train the generative network, we collected a large dataset (100,000
+              frames for each type of SPM and a total of 600,000 frames) through FEA
+              in Abaqus.
+              The forces <b>X</b><sub>force</sub> on the bottom surface and the
+              displacements <b>X</b><sub>node</sub> of nodes on the whole surface are
+              collected with a series of random poses <b>X</b><sub>pose</sub> on the
+              top surface, corresponding to the marker poses.
+            </p>
+            <p>
+              Through MVAE training, all kinds of modal information of SPM are
+              aligned into a series of latent distributions, which are subsequently
+              utilized to generate various modal information under different states.
+              The correlation map and the chord diagram of the latent vectors show
+              that there are 6 latent distributions performing more important roles,
+              which we called as <b>morphing primitives</b>.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/mp.jpg" width="90%" alt="morphing primitives"></img>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              By changing the values of morphing primitives, the generated shapes are
+              deformed in specific manifolds. The deformation cannot be characterized
+              as a typically single motion within the Euclidean space, but it 
+              presents a novel perspective to comprehend the intrinsic dimensionality
+              of the SPMs' multi-modal information. The generated shapes with 
+              different values of morphing primitives are shown below:
+            </p>
+          </div>
+          <video id="teaser" autoplay muted loop playsinline width="80%">
+            <source src="videos/mp_var.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Sim-to-Real Transferability</h2>
+          <div class="content has-text-justified">
+            <p>
+              To evaluate the performance of the MVAE on estimating proprioceptive
+              information of the SPM in the real world, we developed an evaluation
+              environment, including a robotic arm, a 3-dimensional (3D) scanner, a
+              camera, a pose tag, a force/torque sensor, four LED panels, and the SPM.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/sim2real_setup.jpg" width="70%" alt="sim2real evalution setup"></img>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              We compared the shapes estimated by MVAE with the ground truth
+              measured by the 3D scanner under 50 different poses for each type of 
+              SPM.
+              We also compared the forces with those measured by the force/torque 
+              sensor under manual movements during a period of 30 seconds. 
+              The results show that the estimated shapes and forces are highly
+              consistent with the ground truth.
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column">
+              <img src="images/sim2real_shape_force.png" width="100%" alt=""></img>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Twin motion with tendon-driven platform</h2>
+          <div class="content has-text-justified">
+            <p>
+              To enhance SPM with controllable motion capability, we develop a
+              tendon-driven platform, which is composed of a mounting base, 
+              actuators, tendons, driving drums, and pulleys. 
+              The SPM is capable of 6-DOF motion by mounted and driven by this 
+              platform. 
+              We tested the driving accuracy of the platform on each dimension by 
+              comparing the input reference and the actual motion measured by motion
+              capture system (MoCap).
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column">
+              <video id="teaser" autoplay muted loop playsinline controls width="100%">
+                <source src="videos/driving_trans.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column">
+              <video id="teaser" autoplay muted loop playsinline controls width="100%">
+                <source src="videos/driving_rot.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              We realized the twin motion among the manual SPM, the active SPM, and
+              the digital SPM.
+              The manual SPM is deformed by human hands, the active SPM is controlled
+              by the tendon-driven platform, and the digital SPM is to visualize the
+              proprioceptive information of the SPM.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/twin_motion.png" width="90%" alt="twin motion"></img>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              We moved the manual SPM by hand along four trajectories, including
+              circle, square, four-leaved rose, and spiral, and the active SPM is
+              moved synchronously by the tendon-driven platform.
+              The SPM's trajectories are plotted in x-y plane based on a reference
+              point, which is the geometric center of markers.
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column">
+              <video id="teaser" autoplay muted loop playsinline controls width="100%">
+                <source src="videos/tm_circle.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column">
+              <video id="teaser" autoplay muted loop playsinline controls width="100%">
+                <source src="videos/tm_square.mp4" type="video/mp4">
+              </video>
+            </div>
+            </div>
+            <div class="columns is-centered">
+            <div class="column">
+              <video id="teaser" autoplay muted loop playsinline controls width="100%">
+                <source src="videos/tm_rose.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column">
+              <video id="teaser" autoplay muted loop playsinline controls width="100%">
+                <source src="videos/tm_spiral.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Soft-rigid Hybrid Modular Arm</h2>
+          <div class="content has-text-justified">
+            <p>
+              XXX
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/arm_pl.jpg" width="90%" alt="arm pl"></img>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              XXX
+            </p>
+          </div>
+          <div class="content">
+            <video id="teaser" autoplay muted loop playsinline controls width="90%">
+              <source src="videos/arm.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              XXX
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/arm_res.jpg" width="90%" alt="arm result"></img>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre>
+        <code>
+@article{han2024spm,
+    author  = {Han, Xudong and Guo, Ning and Xu, Ronghan and Liu, Xiaobo and Dai, Jian S. and Hong, Wei and Wan, Fang and Song, Chaoyang},
+    title   = {Soft Proprioceptive Module},
+    journal = {arXi preprint arXiv:2409},
+    year    = {2024}
+}
+        </code>
+      </pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Website template credit to 
+              <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, 
+              and is licensed under a 
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
