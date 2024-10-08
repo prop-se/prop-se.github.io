@@ -85,7 +85,7 @@
                   <a href="https://doi.org/10.1109/TRO.2024.3463509"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="ai ai-arxiv"></i>
+                      <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
@@ -168,7 +168,7 @@
             </p>
           </div>
           <div class="content">
-            <img src="images/finger_design.png" width="60%" alt="finger design"></img>
+            <img src="images/finger_design.png" width="500px" alt="finger design"></img>
           </div>
         </div>
       </div>
@@ -179,7 +179,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Volumetric Modeling of Soft Deformation for PropSE</h2>
+          <h2 class="title is-3">Proprioceptive State Estimation of Soft Finger</h2>
+          <h3 class="title is-4">Volumetric Modeling of Soft Deformation</h3>
           <div class="content has-text-justified">
             <p>
               Our proposed solution begins by formulating a volumetric model of the soft robotic finger in a 3D space
@@ -190,26 +191,84 @@
             </p>
           </div>
           <div class="content">
-            <img src="images/deform_model.png" width="60%" alt="deform model"></img>
+            <img src="images/deform_model.png" width="500px" alt="deform model"></img>
           </div>
+          <br />
+          <h3 class="title is-4">Comparison with Conventional Methods</h3>
           <div class="content has-text-justified">
             <p>
-              Taken omni-neck as an example, we identified the parameters of the
-              Ogden (n=3) model, which is the most fitted from the uniaxial tesion
-              test.
-              The normalized error decreased rapidly and converged to the minimum
-              value of 8.863 after 482 trials.
-              Further, we calculated the error of the simulation results using the
-              identified parameters, and compared it with those using the parameters
-              from the uniaxial tension test.
-              The result shows that EVOMIA can effectively reduce the error by more
-              than 10 times, which indicates that it is available to align the
-              mechanical properties between the physical entities and the simulation
-              models.
+              We performed a comparative analysis with two widely adopted techniques, Abaqus and As-Rigid-As-Possible
+              (ARAP), to showcase the efficacy of our shape estimation method. Results show that our method is 40 to 700
+              times faster than Abaqus and 1 to 2 times faster than ARAP at different resolutions, and our method's mean
+              error decreases significantly, from 0.346 mm to 0.086 mm, as the number of elements increases, showing
+              significant advantages over Abaqus and ARAP.
             </p>
           </div>
           <div class="content">
-            <img src="images/evomia_res.png" width="90%" alt="evomia results"></img>
+            <img src="images/comparison_abq_arap.png" width="500px" alt="comparison with abaqus and arap"></img>
+          </div>
+          <br />
+          <h3 class="title is-4">Evaluation with Motion Capture System</h3>
+          <div class="content has-text-justified">
+            <p>
+              To evaluate the performance of the deformation estimation, the soft robotic finger was mounted on a
+              three-axis motion platform for interactive deformation estimation. A motion capture system (Mars2H, Nokov)
+              was used to track finger deformations. There were nine markers attached to the soft finger with rigid
+              links. Among them, six markers were divided into three pairs, which were rigidly attached to the
+              fingertip, the first layer, and the second layer of the soft finger, respectively. The other three markers
+              were attached to the platform and used as the reference reading to align the motion capture system's
+              reference frame with the platform's coordinate frame.
+            </p>
+          </div>
+          <div class="content">
+            <video id="teaser" autoplay muted loop playsinline width="100%">
+              <source src="videos/evaluation_mocap.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              We visualize the error distribution with 3k pairs of the estimated and ground truth positions of the
+              markers. The norm of the total error is within 3 mm, while error distribution along each axis is centered
+              around the (-2, 2) mm range. As the marker prediction model comprises calibration and geometric
+              optimization, the error distribution of six sparse markers may only partially validate the proposed
+              method, leading to the next experiment.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/evaluation_mocap.png" width="900px" alt="evaluation with mocap"></img>
+          </div>
+          <br />
+          <h3 class="title is-4">Evaluation with Touch Haptic Device</h3>
+          <div class="content has-text-justified">
+            <p>
+              We designed another validation experiment using the pen-nib's position of a haptic device (Touch, 3D
+              Systems) as ground truth measurement. an operator holding the pen-nib initiated contact at a random point
+              on the soft robotic finger by pushing it five times. Fifty points were sampled, spreading over half of the
+              soft robotic finger with recorded pen-nib position and the corresponding point of contact on the estimated
+              deformation in the mesh model.
+            </p>
+          </div>
+          <div class="content">
+            <video id="teaser" autoplay muted loop playsinline width="100%">
+              <source src="videos/evaluation_touch.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Similar to the calibration process when using the motion capture system, we solve the barycentric
+              coordinates using the initial contact position of pen-nib and the undeformed vertex position of the
+              tetrahedron nearest to the contact point. Due to the variations among the pushing trajectories among the
+              three locations, the errors are slightly different, but all lie within a 2.5 mm range. The haptic device
+              measurements cover an extensive portion of the soft robotic finger, revealing further details regarding
+              the spatial distribution of the estimation errors. We visualize the mean errors of deformation estimation
+              evaluated at the fifty randomly selected contact locations. Contact locations near the observed AMH
+              constraint are expected to exhibit fewer errors due to penalized computation near this region during
+              deformation optimization. The median of estimated error for the whole-body deformation is 1.96 mm,
+              corresponding to 2.1% of the finger's length.
+            </p>
+          </div>
+          <div class="content">
+            <img src="images/evaluation_touch.png" width="100%" alt="evaluation with touch"></img>
           </div>
         </div>
       </div>
@@ -220,7 +279,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Multi-modal Generative Network</h2>
+          <h2 class="title is-3">Amphibious Tactile Sensing</h2>
           <div class="content has-text-justified">
             <p>
               <b>Multi-modal Variational Autoencoder (MVAE)</b>
