@@ -36,40 +36,34 @@
             <h1 class="title is-1 publication-title">Proprioceptive State Estimation for Amphibious Tactile Sensing</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://gabriel-ning.github.io">Ning Guo</a><sup>1,#</sup>,
+                <a href="https://gabriel-ning.github.io">Ning Guo</a><sup>#</sup>,
               </span>
               <span class="author-block">
-                <a href="https://hanxudong.cc">Xudong Han</a><sup>1,#</sup>,
+                <a href="https://hanxudong.cc">Xudong Han</a><sup>#</sup>,
               </span>
               <span class="author-block">
-                <a href="https://orcid.org/0009-0006-0908-7992">Shuqiao Zhong</a><sup>2,#</sup>,
+                <a href="https://orcid.org/0009-0006-0908-7992">Shuqiao Zhong</a><sup>#</sup>,
               </span>
               <span class="author-block">
-                <a href="https://faculty.sustech.edu.cn/?tagid=zhouzy&lang=en">Zhiyuan Zhou</a><sup>2</sup>,
+                <a href="https://faculty.sustech.edu.cn/?tagid=zhouzy&lang=en">Zhiyuan Zhou</a>,
               </span>
               <span class="author-block">
-                <a href="https://faculty.sustech.edu.cn/?tagid=linj&lang=en">Jian Lin</a><sup>2</sup>,
+                <a href="https://faculty.sustech.edu.cn/?tagid=linj&lang=en">Jian Lin</a>,
               </span>
               <span class="author-block">
-                <a href="https://faculty.sustech.edu.cn/?tagid=daijs&lang=en">Jian S. Dai</a><sup>1</sup>,
+                <a href="https://faculty.sustech.edu.cn/?tagid=daijs&lang=en">Jian S. Dai</a>,
               </span>
               <span class="author-block">
-                <a href="https://maindl.ancorasir.com">Fang Wan</a><sup>3,</sup>*,
+                <a href="https://maindl.ancorasir.com">Fang Wan</a>*,
               </span>
               <span class="author-block">
-                <a href="https://bionicdl.ancorasir.com">Chaoyang Song</a><sup>1,</sup>*
+                <a href="https://bionicdl.ancorasir.com">Chaoyang Song</a>*
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <sup>1</sup>Department of Mechanical and Energy Engineering,
-              </span><br />
-              <span class="author-block">
-                <sup>2</sup>Department of Ocean Science and Engineering,
-              </span><br />
-              <span class="author-block">
-                <sup>3</sup>School of Design,<br />Southern University of Science and Technology
+                Southern University of Science and Technology
               </span><br />
               <span class="author-block">
                 <sup>#</sup>Equal Contribution,
@@ -221,7 +215,7 @@
             </p>
           </div>
           <div class="content">
-            <video id="teaser" autoplay muted loop playsinline width="100%">
+            <video id="teaser" autoplay muted loop playsinline controls width="100%">
               <source src="videos/evaluation_mocap.mp4" type="video/mp4">
             </video>
           </div>
@@ -249,7 +243,7 @@
             </p>
           </div>
           <div class="content">
-            <video id="teaser" autoplay muted loop playsinline width="100%">
+            <video id="teaser" autoplay muted loop playsinline controls width="100%">
               <source src="videos/evaluation_touch.mp4" type="video/mp4">
             </video>
           </div>
@@ -313,191 +307,81 @@
             </p>
           </div>
           <div class="content">
-            <img src="images/turbidity.png" width="100%" alt="mvae"></img>
+            <img src="images/turbidity.png" width="100%" alt="turbidity benchmark"></img>
           </div>
-          <h3 class="title is-4">Benchmarking VBTS against Turbidity</h3>
+          <br />
+          <h3 class="title is-4">Underwater Exteroceptive Estimation of Object Shape</h3>
           <div class="content has-text-justified">
             <p>
               While proprioception refers to being aware of one's movement, tactile sensing involves gathering
               information about the external environment through the sense of touch. This section presents an object
-              shape estimation approach by extending the PropSE method proposed in the previous section to tactile
-              sensing.
+              shape estimation approach by extending the PropSE method proposed to tactile sensing.
             </p>
             <p>
               Since our soft finger can provide large-scale, adaptive deformation conforming to the object's geometric
               features through contact, we could infer shape-related contact information from the finger's estimated
               shape during the process. We assume the soft finger's contact patch coincides with that of the object
               during grasping. As a result, we can predict object surface topography using spatially distributed contact
-              points on the touching interface.
+              points on the touching interface. In this case, we used a parallel two-finger gripper (HandE from Robotiq,
+              Inc.) attached to the wrist flange of a robotic manipulator (Franka Emika) through a 3D-printed
+              cylindrical rod for an extended range of motion. Our soft robotic fingers are attached to each fingertip
+              of the gripper through a customized adapter fabricated by 3D printing. With the gripper submerged
+              underwater, the system is programmed to sequentially execute a series of actions, including gripping and
+              releasing the object and moving along a prescribed direction for a fixed distance to acquire underwater
+              object shape information.
             </p>
           </div>
           <div class="content">
-            <img src="images/mp.jpg" width="90%" alt="morphing primitives"></img>
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              By changing the values of morphing primitives, the generated shapes are
-              deformed in specific manifolds. The deformation cannot be characterized
-              as a typically single motion within the Euclidean space, but it
-              presents a novel perspective to comprehend the intrinsic dimensionality
-              of the SPMs' multi-modal information. The generated shapes with
-              different values of morphing primitives are shown below:
-            </p>
-          </div>
-          <video id="teaser" autoplay muted loop playsinline width="80%">
-            <source src="videos/mp_var.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Sim-to-Real Transferability</h2>
-          <div class="content has-text-justified">
-            <p>
-              To evaluate the performance of the MVAE on estimating proprioceptive
-              information of the SPM in the real world, we developed an evaluation
-              environment, including a robotic arm, a 3-dimensional (3D) scanner, a
-              camera, a pose tag, a force/torque sensor, four LED panels, and the SPM.
-            </p>
-          </div>
-          <div class="content">
-            <img src="images/sim2real_setup.jpg" width="70%" alt="sim2real evalution setup"></img>
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              We compared the shapes estimated by MVAE with the ground truth
-              measured by the 3D scanner under 50 different poses for each type of
-              SPM.
-              We also compared the forces with those measured by the force/torque
-              sensor under manual movements during a period of 30 seconds.
-              The results show that the estimated shapes and forces are highly
-              consistent with the ground truth.
-            </p>
-          </div>
-          <div class="columns is-centered">
-            <div class="column">
-              <img src="images/sim2real_shape_force.png" width="100%" alt=""></img>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Twin motion with tendon-driven platform</h2>
-          <div class="content has-text-justified">
-            <p>
-              To enhance SPM with controllable motion capability, we develop a
-              tendon-driven platform, which is composed of a mounting base,
-              actuators, tendons, driving drums, and pulleys.
-              The SPM is capable of 6-DOF motion by mounted and driven by this
-              platform.
-              We tested the driving accuracy of the platform on each dimension by
-              comparing the input reference and the actual motion measured by motion
-              capture system (MoCap).
-            </p>
-          </div>
-          <div class="columns is-centered">
-            <div class="column">
-              <video id="teaser" autoplay muted loop playsinline controls width="100%">
-                <source src="videos/driving_trans.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="column">
-              <video id="teaser" autoplay muted loop playsinline controls width="100%">
-                <source src="videos/driving_rot.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              We realized the twin motion among the manual SPM, the active SPM, and
-              the digital SPM.
-              The manual SPM is deformed by human hands, the active SPM is controlled
-              by the tendon-driven platform, and the digital SPM is to visualize the
-              proprioceptive information of the SPM.
-            </p>
-          </div>
-          <div class="content">
-            <img src="images/twin_motion.png" width="90%" alt="twin motion"></img>
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              We moved the manual SPM by hand along four trajectories, including
-              circle, square, four-leaved rose, and spiral, and the active SPM is
-              moved synchronously by the tendon-driven platform.
-              The SPM's trajectories are plotted in x-y plane based on a reference
-              point, which is the geometric center of markers.
-            </p>
-          </div>
-          <div class="columns is-centered">
-            <div class="column">
-              <video id="teaser" autoplay muted loop playsinline controls width="100%">
-                <source src="videos/tm_circle.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="column">
-              <video id="teaser" autoplay muted loop playsinline controls width="100%">
-                <source src="videos/tm_square.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <div class="column">
-              <video id="teaser" autoplay muted loop playsinline controls width="100%">
-                <source src="videos/tm_rose.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="column">
-              <video id="teaser" autoplay muted loop playsinline controls width="100%">
-                <source src="videos/tm_spiral.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Soft-rigid Hybrid Modular Arm</h2>
-          <div class="content has-text-justified">
-            <p>
-              XXX
-            </p>
-          </div>
-          <div class="content">
-            <img src="images/arm_pl.jpg" width="90%" alt="arm pl"></img>
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              XXX
-            </p>
-          </div>
-          <div class="content">
-            <video id="teaser" autoplay muted loop playsinline controls width="90%">
-              <source src="videos/arm.mp4" type="video/mp4">
+            <video id="teaser" autoplay muted loop playsinline controls width="100%">
+              <source src="videos/vase_shape_sensing.mp4" type="video/mp4">
             </video>
           </div>
           <div class="content has-text-justified">
             <p>
-              XXX
+              We present our method on actual data collected during the underwater tactile exploration experiment. The
+              shape estimates at each cutting sectional plane are compared concerning the ground truth using the Chamfer
+              Distance (CD). We chose five vertical cutting planes and one horizontal sectional plane for reconstructed
+              object surface evaluation. For each cutting plane, a calibration error exists between the vase and the
+              Hand-E gripper, leading to the expected gap between the reconstructed and ground truth points. In addition
+              to the systematic error, we have observed a slight decrease in the CD metric values between planes 1 and 5
+              compared to planes 2, 3, and 4, which could be attributed to the limitations of the soft finger in
+              adapting to small objects with significant curvature. On the other hand, by employing tactile exploration
+              actions with a relatively large contact area on the soft finger's surface, the shape estimation of objects
+              similar in size to the vase can be accomplished more efficiently, typically within 8-12 touches.
             </p>
           </div>
           <div class="content">
-            <img src="images/arm_res.jpg" width="90%" alt="arm result"></img>
+            <img src="images/vase_shape_sensing.png" width="100%" alt="vase shape sensing"></img>
+          </div>
+          <br />
+          <h3 class="title is-4">Vision-based Tactile Grasping with an Underwater ROV</h3>
+          <div class="content has-text-justified">
+            <p>
+              Here, we provide a full-system demonstration using our vision-based soft robotic fingers on an underwater
+              Remotely Operated Vehicle (ROV, FIFISH PRO V6 PLUS, QYSEA). It includes a single-DOF robotic gripper,
+              which can be modified using the proposed soft fingers with customized adaptors. Our design conveniently
+              introduced omni-directional adaptation capability to the gripper's existing functionality with added
+              capabilities in real-time tactile sensing underwater. Using the in-finger images, we can use the methods
+              proposed in this work to achieve real-time reconstruction of contact events on our soft robotic finger.
+            </p>
+            <p>
+              Since our soft finger can provide large-scale, adaptive deformation conforming to the object's geometric
+              features through contact, we could infer shape-related contact information from the finger's estimated
+              shape during the process. We assume the soft finger's contact patch coincides with that of the object
+              during grasping. As a result, we can predict object surface topography using spatially distributed contact
+              points on the touching interface. In this case, we used a parallel two-finger gripper (HandE from Robotiq,
+              Inc.) attached to the wrist flange of a robotic manipulator (Franka Emika) through a 3D-printed
+              cylindrical rod for an extended range of motion. Our soft robotic fingers are attached to each fingertip
+              of the gripper through a customized adapter fabricated by 3D printing. With the gripper submerged
+              underwater, the system is programmed to sequentially execute a series of actions, including gripping and
+              releasing the object and moving along a prescribed direction for a fixed distance to acquire underwater
+              object shape information.
+            </p>
+          </div>
+          <div class="content">
+            <video id="teaser" autoplay muted loop playsinline controls width="100%">
+              <source src="videos/rov_grasping.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
@@ -509,11 +393,12 @@
       <h2 class="title">BibTeX</h2>
       <pre>
         <code>
-@article{han2024spm,
-    author  = {Han, Xudong and Guo, Ning and Xu, Ronghan and Liu, Xiaobo and Dai, Jian S. and Hong, Wei and Wan, Fang and Song, Chaoyang},
-    title   = {Soft Proprioceptive Module},
-    journal = {arXi preprint arXiv:2409},
-    year    = {2024}
+@article{guo2024proprioceptive,
+    title={Proprioceptive State Estimation for Amphibious Tactile Sensing},
+    author={Guo, Ning and Han, Xudong and Zhong, Shuqiao and Zhou, Zhiyuan and Lin, Jian and Dai, Jian S and Wan, Fang and Song, Chaoyang},
+    journal={IEEE Transactions on Robotics},
+    year={2024},
+    publisher={IEEE}
 }
         </code>
       </pre>
