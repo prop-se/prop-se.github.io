@@ -280,34 +280,55 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
           <h2 class="title is-3">Amphibious Tactile Sensing</h2>
+          <h3 class="title is-4">Benchmarking VBTS against Turbidity</h3>
           <div class="content has-text-justified">
             <p>
-              <b>Multi-modal Variational Autoencoder (MVAE)</b>
-              is developed to learn the morphing primitives of SPMs, which include
-              the multi-modal information representing SPMs' behaviours.
-              The architecture of MVAE is shown below:
+              Our proposed rigidity-aware AMH method effectively transforms the visual perception process for deformable
+              shape reconstruction into a marker-based pose recognition problem. Therefore, the benchmarking of our
+              vision-based tactile sensing solution underwater is directly determined by successfully recognizing the
+              fiducial marker poses used in our system under different turbidity conditions. Turbidity is an optical
+              characteristic that measures the clarity of a water body and is reported in Nephelometric Turbidity Units
+              (NTU). It influences the visibility of optical cameras for underwater inspection, inducing light
+              attenuation effects caused by the suspended particles. As one of the critical indicators for
+              characterizing water quality, there have been rich studies on the turbidity of large water bodies
+              worldwide. For example, previous research shows that the Yangtze River's turbidity is measured between
+              1.71 and 154 NTU.
+            </p>
+            <p>
+              We investigated the robustness of our proposed VBTS solution in different water clarity conditions by
+              mixing condensed standard turbidity liquid with clear water to reach different turbidity ratings. Our
+              proposed soft robotic finger is installed on a linear actuator in a tank filled with 56 liters of clear
+              water. A probe is fixed under the soft robotic finger, inducing contact-based whole-body deformation when
+              the finger is commanded to move downward. In our experiment, for the turbidity range between 0 and 40 NTU,
+              the raw images captured by our in-finger vision achieved a 100\% success rate in ArUco pose recognition.
+              At 50 NTU turbidity, the first sign of failed marker pose recognition was observed when the most
+              considerable deformation was induced at 8 mm. Our experiment shows that this issue can be alleviated using
+              simple image enhancement techniques to regain a 100% marker pose recognition success rate. However, the
+              marker pose recognition performance under large-scale whole-body deformation quickly deteriorated when the
+              turbidity reached 60 NTU and eventually became unusable at 70 NTU. Image enhancement could effectively
+              increase the upper bound to 100 NTU to reach an utterly unusable marker pose recognition in large-scale
+              whole-body deformation. For turbidity above 100 NTU, simple image enhancement provides limited
+              contributions to our system. Our experiment shows that when the turbidity reached 160 NTU, our in-finger
+              system failed to recognize any ArUco pose underwater, even after image enhancement.
             </p>
           </div>
           <div class="content">
-            <img src="images/mvae.jpg" width="90%" alt="mvae"></img>
+            <img src="images/turbidity.png" width="100%" alt="mvae"></img>
           </div>
+          <h3 class="title is-4">Benchmarking VBTS against Turbidity</h3>
           <div class="content has-text-justified">
             <p>
-              To train the generative network, we collected a large dataset (100,000
-              frames for each type of SPM and a total of 600,000 frames) through FEA
-              in Abaqus.
-              The forces <b>X</b><sub>force</sub> on the bottom surface and the
-              displacements <b>X</b><sub>node</sub> of nodes on the whole surface are
-              collected with a series of random poses <b>X</b><sub>pose</sub> on the
-              top surface, corresponding to the marker poses.
+              While proprioception refers to being aware of one's movement, tactile sensing involves gathering
+              information about the external environment through the sense of touch. This section presents an object
+              shape estimation approach by extending the PropSE method proposed in the previous section to tactile
+              sensing.
             </p>
             <p>
-              Through MVAE training, all kinds of modal information of SPM are
-              aligned into a series of latent distributions, which are subsequently
-              utilized to generate various modal information under different states.
-              The correlation map and the chord diagram of the latent vectors show
-              that there are 6 latent distributions performing more important roles,
-              which we called as <b>morphing primitives</b>.
+              Since our soft finger can provide large-scale, adaptive deformation conforming to the object's geometric
+              features through contact, we could infer shape-related contact information from the finger's estimated
+              shape during the process. We assume the soft finger's contact patch coincides with that of the object
+              during grasping. As a result, we can predict object surface topography using spatially distributed contact
+              points on the touching interface.
             </p>
           </div>
           <div class="content">
