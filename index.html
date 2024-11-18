@@ -25,6 +25,15 @@
   <script src="js/bulma-carousel.min.js"></script>
   <script src="js/bulma-slider.min.js"></script>
   <script src="js/index.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M4R3QED01S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M4R3QED01S');
+  </script>
 </head>
 
 <body>
@@ -436,15 +445,15 @@
   </footer>
 
   <script>
-      bulmaCarousel.attach('#results-carousel-hero', {
-        slidesToScroll: 1,
-        slidesToShow: 2,
-        autoplay: true,
-        loop: true,
-        infinite: true,
-        duration: 500,
-        autoplaySpeed: 5000,
-      });
+    bulmaCarousel.attach('#results-carousel-hero', {
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      autoplay: true,
+      loop: true,
+      infinite: true,
+      duration: 500,
+      autoplaySpeed: 5000,
+    });
 
   </script>
 </body>
